@@ -14,17 +14,17 @@ Route::group(['prefix' => 'v1', 'middleware' => ['api','json.response'] , 'names
 });
 
 //Customer Routes
-Route::group(['prefix' => 'v1/customer', 'middleware' => ['auth:api','json.response'] , 'namespace' => 'Api\v1\Customer'], function () {
+Route::group(['prefix' => 'v1/customer', 'middleware' => ['auth:api','json.response','role:customer'] , 'namespace' => 'Api\v1\Customer'], function () {
     Route::get('products','ProductController@index')->name('customer.products');
 });
 
 //Administrator Routes
-Route::group(['prefix' => 'v1/administrator', 'middleware' => ['auth:api','json.response'] , 'namespace' => 'Api\v1\Administrator'], function () {
+Route::group(['prefix' => 'v1/administrator', 'middleware' => ['auth:api','json.response','role:administrator'] , 'namespace' => 'Api\v1\Administrator'], function () {
     Route::resource('user','UserController')->only(['index','show','update']);
     Route::resource('customer','CustomerController');
 });
 
 //Seller Routes
-Route::group(['prefix' => 'v1/seller', 'middleware' => ['auth:api','json.response'] , 'namespace' => 'Api\v1\Seller'], function () {
+Route::group(['prefix' => 'v1/seller', 'middleware' => ['auth:api','json.response','role:seller'] , 'namespace' => 'Api\v1\Seller'], function () {
     Route::resource('product','ProductController')->only('index','store');
 });

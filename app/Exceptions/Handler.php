@@ -7,6 +7,7 @@ use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\Exceptions\ThrottleRequestsException;
+use Spatie\Permission\Exceptions\UnauthorizedException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -67,6 +68,13 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+        if ($exception instanceof UnauthorizedException) {
+            return response()->json([
+                'responseMessage' => 'شما دسترسی لازم برای این قسمت را ندارید.',
+                'responseStatus'  => 403,
+            ]);
+        }
+
         if ($exception instanceof MethodNotAllowedHttpException) {
             return response()->json(
                 [
