@@ -1,0 +1,1538 @@
+{
+	"info": {
+		"_postman_id": "d5f5746b-4e9d-4de5-a242-4565c8489581",
+		"name": "Marketplace",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\" : \"youremail@gmail.com\",\n  \"password\" : \"12345678\",\n  \"remember_me\" : true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login (verify)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\" : \"youremail@gmail.com\",\n  \"password\" : \"12345678\",\n  \"remember_me\" : true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/v1/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 10:45:17 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 10:45:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer-when-downgrade"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, GET, OPTIONS, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Accept, Authorization, X-Requested-With, Cache-Control"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": 1,\n    \"data\": {\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiMGYzMjI0ZjU3YjY4YmI0OWVmMDQyZjM5MzYwZmJkY2U4YTZiMDljODFmYjU5NmEyYTI0OTg4YmJkZGZiZTJlZjk5YjdjYzhjMTY0ZjlhNjQiLCJpYXQiOjE1ODQ3MDExMTcsIm5iZiI6MTU4NDcwMTExNywiZXhwIjoxNjE2MjM3MTE3LCJzdWIiOiIxMyIsInNjb3BlcyI6W119.DZLgSwuPHjzwHJ-RFJUR26fpUxHd9mFk-5_J_szQK6UwRLdPd2gSa8QBgKVgMxPMegkF5mZrPPTwBsNP-z6NEZ_opE_vdxraSeOVH5a3XUJXZyB9GHHAd8WJkWo1F1ZUFCiAgmU-T-PAl3mRm50sPQV5ITKOgQ4esOl3NNLZ7G7kOPvLo8399X63fcPZumIBvxgFguSjv1XX7y_Y8fRmUsF5u7q7ChubeZMtSa2KGRA2MGYV_C1MZJbtv1InOs8rUtfYLfXxEYGvk87NM0wlQ_iVdFdd6K8DOl_EMD9YZCWD9G6RFQokBMh4nBH8XS-DuveuHhu1bQmkebG-L98Py1SIUJXp6xeAJdMcRYfOE_JjTiu7Jj6J_eqy0zbF5MUj5xr8I8izQ_B-e9ymsp9h7EpF9swJ4UcAIFCinnjEbyJ_g9gh6aTGGb4t4MMHRfOnrckOJggJWZw1fQVRTyipecF1d1LAvP6WdGfRBuImoS3TwFmeY10FO7sE9flJrxAdjaAYDOAjHuw_myTm4w8O6nbuUM5ClYpdDVUZL9jLwB-BZke23l2zPH5_rR6OHO-qV6HwKT8EyHC5xDvuKW47QvC_HEnb66vHSpkQoaepqDYXEw10MgDJQKUYRmDVOg4992sxFVFpzG--A9SduJ_tBilQ_mHlxu7QIhuUV-Q08js\",\n        \"nameFamily\": \"name family\",\n        \"remember_token\": true,\n        \"role\": [\n            \"customer\"\n        ]\n    },\n    \"message\": \"ورود موفقیت آمیز بود.\"\n}"
+						},
+						{
+							"name": "Login (nverify)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\" : \"youremail@gmail.com\",\n  \"password\" : \"12345678\",\n  \"remember_me\" : true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/v1/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 10:43:44 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 10:43:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer-when-downgrade"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, GET, OPTIONS, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Accept, Authorization, X-Requested-With, Cache-Control"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": 0,\n    \"message\": \"حساب کاربری شما هنوز تایید نشده است.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\" : \"name\",\n  \"family\" : \"family\",\n  \"address\" : \"Tehran\",\n  \"latitude\": \"37.219512\",\n  \"longitude\": \"48.374369\",\n  \"email\" : \"youremail@gmail.com\",\n  \"password\" : \"12345678\",\n  \"c_password\" : \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\" : \"name\",\n  \"family\" : \"family\",\n  \"address\" : \"Tehran\",\n  \"latitude\": \"37.219512\",\n  \"longitude\": \"48.374369\",\n  \"email\" : \"youremail@gmail.com\",\n  \"password\" : \"12345678\",\n  \"c_password\" : \"12345678\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/v1/register",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 10:43:17 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 10:43:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer-when-downgrade"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, GET, OPTIONS, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Accept, Authorization, X-Requested-With, Cache-Control"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": 1,\n    \"data\": {\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiZDk1NGEwMDFhMmRkYmE0YmU5ODA1MWU0NzBjZjdjOGUzODI4ODYyZGU2MmIwOWExNTUwMGVkMjk0OTBkNThkYTBiZWNlMmRkZjA4MWQ3MDciLCJpYXQiOjE1ODQ3MDA5OTYsIm5iZiI6MTU4NDcwMDk5NiwiZXhwIjoxNjE2MjM2OTk2LCJzdWIiOiIxMyIsInNjb3BlcyI6W119.EP2B-jOYl7SMOoD-2sEr4HcJ5zh2H3Z6Nit3oVXYghJC55kqSnQ_uOFBtqq1am3b8_XlOEDSBe_LVv1D3hAO5Yr_eDMPhazxGXV0U9wUjeoPXqvji5vYymJ_w_TduQAV08A4iKtCUu5K3JhOh_FbsI6CXMREaDQN5RBwEUUsw78h5Ituhwf44JJDuYFcIu_dqp796zOYTnThYTyM4o9AOGzbBRqZ_lYHxG4XEM23BFCv5yFgD9D9KUCfYSq-X0_oZeFE7f_DM-doYXVRTSibDo8wpUG9v-fpjrv4z7J9uK1w3jimrLzasW-ZuRenqukabRueZKdpXciTxsQe0qJPAWwlhjQ6lXdTV8dJM-mNuerOfgxhaa0ekPz2KYuSRmYl9y6wOEdPLLi36o7O0YIRtkrGXlUcCuO9L8rA0z7eKKE0mn6a4DfITU3eMLgvSvPSfyAOaxyQBS-z-vXpX4AJWbd-v7YmBNzsM2VWhAutxVphd6fRzP0H38lB70too0I6sol2gxdaIlyd15nr3vCsK2AVifoezBumozKCpZTFpSP5z0t08NPbN01FJCQoe3qPpqhmSlNNkhA4PTfTwJpz6K5q2DKcm9hX_l6plDmrONr7RzRADt9zLplkP7OEKf2AIaescv-5N76WpniK_jelT0GyqMZL7SRGcBhimQJUN04\",\n        \"email\": \"youremail@gmail.com\",\n        \"nameFamily\": \"name family\",\n        \"role\": [\n            \"customer\"\n        ]\n    },\n    \"message\": \"ثبت نام با موفقیت انجام شد.\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Get All Products",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/customer/products",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/v1/customer/products",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"customer",
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 10:51:28 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 10:51:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer-when-downgrade"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, GET, OPTIONS, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Accept, Authorization, X-Requested-With, Cache-Control"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"address\": \"Tehran\",\n            \"distance\": 0,\n            \"seller\": {\n                \"id\": 1,\n                \"title\": \"فروشگاه شهبازی\",\n                \"slug\": \"shahbazi shop\",\n                \"description\": \"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته.\",\n                \"products\": [\n                    {\n                        \"id\": 1,\n                        \"title\": \"Sed ipsa libero quod.\",\n                        \"slug\": \"possimus-eaque-nemo-perferendis-explicabo\",\n                        \"description\": \"Qui ipsa dolorem quia praesentium culpa omnis qui nihil. Nostrum amet ipsa architecto. Sit debitis corrupti alias molestias eveniet ea dolorem ratione. Ratione alias voluptas id aut unde.\",\n                        \"price\": \"45000\",\n                        \"time\": \"2020-03-19T14:04:35.000000Z\",\n                        \"status\": \"موجود\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"title\": \"Quos ratione voluptates iure quia.\",\n                        \"slug\": \"quo-sint-aut-ad-esse-et-dolorem\",\n                        \"description\": \"Nemo quod esse possimus praesentium sit. Velit rerum eaque ea dolor ab pariatur quas. Voluptate fugiat consequatur aut consequatur nobis veritatis quae. Unde enim veniam fugit ea.\",\n                        \"price\": \"45000\",\n                        \"time\": \"2020-03-19T14:04:35.000000Z\",\n                        \"status\": \"موجود\"\n                    },\n                    {\n                        \"id\": 3,\n                        \"title\": \"Aut et qui voluptas earum.\",\n                        \"slug\": \"id-dolore-id-voluptas-sint-sit\",\n                        \"description\": \"Soluta exercitationem veritatis corrupti ullam sit quia ipsam vero. Et cupiditate laborum aut quis harum. Molestiae laudantium molestias enim doloremque. Nesciunt consequatur veritatis voluptatem.\",\n                        \"price\": \"45000\",\n                        \"time\": \"2020-03-19T14:04:35.000000Z\",\n                        \"status\": \"موجود\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"title\": \"Et quidem natus ut.\",\n                        \"slug\": \"porro-impedit-impedit-ab-nisi-voluptas-non-ut\",\n                        \"description\": \"Sed et aut error. Non iusto consequatur excepturi sed non sed.\",\n                        \"price\": \"45000\",\n                        \"time\": \"2020-03-19T14:04:35.000000Z\",\n                        \"status\": \"موجود\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"title\": \"Iure velit id quas autem.\",\n                        \"slug\": \"delectus-esse-ut-sed-praesentium-quaerat-omnis\",\n                        \"description\": \"Tempora qui blanditiis voluptatem laboriosam dolorum dolores officiis. Quis rem unde tempora sint atque quae reprehenderit. Ducimus nesciunt voluptatem odio recusandae ullam vero.\",\n                        \"price\": \"45000\",\n                        \"time\": \"2020-03-19T14:04:35.000000Z\",\n                        \"status\": \"موجود\"\n                    },\n                    {\n                        \"id\": 6,\n                        \"title\": \"Qui voluptas voluptatum totam aut.\",\n                        \"slug\": \"totam-soluta-suscipit-laudantium-doloremque-facilis\",\n                        \"description\": \"Sit quas distinctio incidunt. Est numquam necessitatibus quia ut odit suscipit. Dignissimos blanditiis magnam ex impedit aspernatur sapiente et. Et earum consequatur ut et esse sapiente provident.\",\n                        \"price\": \"45000\",\n                        \"time\": \"2020-03-19T14:04:35.000000Z\",\n                        \"status\": \"موجود\"\n                    },\n                    {\n                        \"id\": 7,\n                        \"title\": \"Ut accusantium debitis quia omnis.\",\n                        \"slug\": \"quis-quibusdam-nulla-officia\",\n                        \"description\": \"Nesciunt voluptas id praesentium. Alias alias incidunt perspiciatis cum voluptates. Vero porro accusantium molestiae expedita minima qui.\",\n                        \"price\": \"45000\",\n                        \"time\": \"2020-03-19T14:04:35.000000Z\",\n                        \"status\": \"موجود\"\n                    },\n                    {\n                        \"id\": 8,\n                        \"title\": \"Quas ullam ratione rerum tenetur.\",\n                        \"slug\": \"quibusdam-eum-animi-et-officiis-nisi-est\",\n                        \"description\": \"In aut vel consequatur harum maiores nihil tenetur. Magnam reprehenderit maxime accusantium libero harum eligendi. Repellat at corrupti dicta aut ipsam autem et.\",\n                        \"price\": \"45000\",\n                        \"time\": \"2020-03-19T14:04:35.000000Z\",\n                        \"status\": \"موجود\"\n                    },\n                    {\n                        \"id\": 9,\n                        \"title\": \"Enim eos fugit occaecati.\",\n                        \"slug\": \"suscipit-blanditiis-quis-voluptas-repellendus-est-eos\",\n                        \"description\": \"Distinctio reiciendis accusantium accusamus sunt. Placeat distinctio officiis quas. Dolores aut quos illo sint praesentium odio praesentium.\",\n                        \"price\": \"45000\",\n                        \"time\": \"2020-03-19T14:04:35.000000Z\",\n                        \"status\": \"موجود\"\n                    },\n                    {\n                        \"id\": 10,\n                        \"title\": \"Aut velit repellat commodi ad.\",\n                        \"slug\": \"accusamus-exercitationem-magnam-enim-sit-ex-velit\",\n                        \"description\": \"Ad iusto et unde possimus omnis. Voluptas sed beatae possimus modi. Dolore eius incidunt illum repudiandae est doloremque natus.\",\n                        \"price\": \"45000\",\n                        \"time\": \"2020-03-19T14:04:35.000000Z\",\n                        \"status\": \"موجود\"\n                    }\n                ]\n            }\n        },\n        {\n            \"id\": 2,\n            \"address\": \"تهران, خیابان شهید بهشتی\",\n            \"distance\": 0,\n            \"seller\": {\n                \"id\": 2,\n                \"title\": \"فروشگاه حاج علی و دوستان\",\n                \"slug\": \"haj-ali-doostan\",\n                \"description\": \"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.\",\n                \"products\": []\n            }\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Administrator",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/administrator/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"administrator",
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/v1/administrator/user",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"administrator",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 18 Mar 2020 09:32:13 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 18 Mar 2020 09:32:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer-when-downgrade"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, GET, OPTIONS, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Accept, Authorization, X-Requested-With, Cache-Control"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"محمدرضا\",\n            \"family\": \"شهبازی\",\n            \"email\": \"leberman12@gmail.com\",\n            \"verify\": 1,\n            \"latitude\": null,\n            \"longitude\": null,\n            \"address\": null,\n            \"time\": null,\n            \"role\": []\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Pierce\",\n            \"family\": \"Boyer\",\n            \"email\": \"cassidy23@example.org\",\n            \"verify\": 1,\n            \"latitude\": \"37.331741000000001\",\n            \"longitude\": \"-122.0303329\",\n            \"address\": \"Quis omnis et dolores non. Nihil aut consequatur molestias dolores facilis voluptatem et ut. Corrupti ea eaque debitis eum fugiat nemo rerum. Asperiores soluta ducimus nam in sunt.\",\n            \"time\": \"2020-03-17T18:46:17.000000Z\",\n            \"role\": []\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Devon\",\n            \"family\": \"Nader\",\n            \"email\": \"elta.mosciski@example.org\",\n            \"verify\": 1,\n            \"latitude\": \"37.331741000000001\",\n            \"longitude\": \"-122.0303329\",\n            \"address\": \"Aliquam labore rerum sed et. Maiores laborum modi repellat. Qui beatae id error.\",\n            \"time\": \"2020-03-17T18:46:17.000000Z\",\n            \"role\": []\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Leanna\",\n            \"family\": \"Stoltenberg\",\n            \"email\": \"olittle@example.net\",\n            \"verify\": 1,\n            \"latitude\": \"37.331741000000001\",\n            \"longitude\": \"-122.0303329\",\n            \"address\": \"Et minus consequuntur soluta omnis. Et in sapiente quibusdam consequatur quae cumque autem. Quaerat dolore voluptatem consequatur molestiae nisi distinctio. Eum quo sed aut maiores eum laudantium.\",\n            \"time\": \"2020-03-17T18:46:17.000000Z\",\n            \"role\": []\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Damion\",\n            \"family\": \"Okuneva\",\n            \"email\": \"deshawn.braun@example.net\",\n            \"verify\": 0,\n            \"latitude\": \"37.331741000000001\",\n            \"longitude\": \"-122.0303329\",\n            \"address\": \"Ullam harum maiores repellendus eius voluptatibus veniam. Dolores ducimus nulla recusandae rerum ut ratione. Aut dolorem in veritatis sit tenetur.\",\n            \"time\": \"2020-03-17T18:46:17.000000Z\",\n            \"role\": []\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/v1/administrator/user?page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/v1/administrator/user?page=3\",\n        \"prev\": null,\n        \"next\": \"http://127.0.0.1:8000/api/v1/administrator/user?page=2\"\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 3,\n        \"path\": \"http://127.0.0.1:8000/api/v1/administrator/user\",\n        \"per_page\": 5,\n        \"to\": 5,\n        \"total\": 12\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Show User With Id",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/administrator/user/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"administrator",
+								"user",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/v1/administrator/user",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"administrator",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 18 Mar 2020 09:32:13 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 18 Mar 2020 09:32:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer-when-downgrade"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, GET, OPTIONS, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Accept, Authorization, X-Requested-With, Cache-Control"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"محمدرضا\",\n            \"family\": \"شهبازی\",\n            \"email\": \"leberman12@gmail.com\",\n            \"verify\": 1,\n            \"latitude\": null,\n            \"longitude\": null,\n            \"address\": null,\n            \"time\": null,\n            \"role\": []\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Pierce\",\n            \"family\": \"Boyer\",\n            \"email\": \"cassidy23@example.org\",\n            \"verify\": 1,\n            \"latitude\": \"37.331741000000001\",\n            \"longitude\": \"-122.0303329\",\n            \"address\": \"Quis omnis et dolores non. Nihil aut consequatur molestias dolores facilis voluptatem et ut. Corrupti ea eaque debitis eum fugiat nemo rerum. Asperiores soluta ducimus nam in sunt.\",\n            \"time\": \"2020-03-17T18:46:17.000000Z\",\n            \"role\": []\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Devon\",\n            \"family\": \"Nader\",\n            \"email\": \"elta.mosciski@example.org\",\n            \"verify\": 1,\n            \"latitude\": \"37.331741000000001\",\n            \"longitude\": \"-122.0303329\",\n            \"address\": \"Aliquam labore rerum sed et. Maiores laborum modi repellat. Qui beatae id error.\",\n            \"time\": \"2020-03-17T18:46:17.000000Z\",\n            \"role\": []\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Leanna\",\n            \"family\": \"Stoltenberg\",\n            \"email\": \"olittle@example.net\",\n            \"verify\": 1,\n            \"latitude\": \"37.331741000000001\",\n            \"longitude\": \"-122.0303329\",\n            \"address\": \"Et minus consequuntur soluta omnis. Et in sapiente quibusdam consequatur quae cumque autem. Quaerat dolore voluptatem consequatur molestiae nisi distinctio. Eum quo sed aut maiores eum laudantium.\",\n            \"time\": \"2020-03-17T18:46:17.000000Z\",\n            \"role\": []\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Damion\",\n            \"family\": \"Okuneva\",\n            \"email\": \"deshawn.braun@example.net\",\n            \"verify\": 0,\n            \"latitude\": \"37.331741000000001\",\n            \"longitude\": \"-122.0303329\",\n            \"address\": \"Ullam harum maiores repellendus eius voluptatibus veniam. Dolores ducimus nulla recusandae rerum ut ratione. Aut dolorem in veritatis sit tenetur.\",\n            \"time\": \"2020-03-17T18:46:17.000000Z\",\n            \"role\": []\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/v1/administrator/user?page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/v1/administrator/user?page=3\",\n        \"prev\": null,\n        \"next\": \"http://127.0.0.1:8000/api/v1/administrator/user?page=2\"\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 3,\n        \"path\": \"http://127.0.0.1:8000/api/v1/administrator/user\",\n        \"per_page\": 5,\n        \"to\": 5,\n        \"total\": 12\n    }\n}"
+						},
+						{
+							"name": "Show User With Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/v1/administrator/user/5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"administrator",
+										"user",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 10:49:15 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 10:49:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer-when-downgrade"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, GET, OPTIONS, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Accept, Authorization, X-Requested-With, Cache-Control"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"name\": \"Lizeth\",\n        \"family\": \"Bartoletti\",\n        \"email\": \"wyatt63@example.net\",\n        \"verify\": 0,\n        \"latitude\": \"15.219512\",\n        \"longitude\": \"48.374369\",\n        \"address\": \"Perspiciatis quis deserunt dolore suscipit nihil minus eaque. Magni perferendis quia dolorem officiis. Possimus qui laudantium recusandae sed consequatur. Iusto nesciunt numquam amet nihil sit.\",\n        \"time\": \"2020-03-19T14:04:35.000000Z\",\n        \"role\": []\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User With Id",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\" : \"mohammad\",\n  \"family\" : \"shahbazi\",\n  \"address\" : \"tehran\",\n  \"latitude\": \"37.219512\",\n  \"longitude\": \"48.374369\",\n  \"email\" : \"youremail2@gmail.com\",\n  \"verify\" : 1,\n  \"role\" : \"administrator\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/administrator/user/12",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"administrator",
+								"user",
+								"12"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update User With Id",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\" : \"mohammad\",\n  \"family\" : \"shahbazi\",\n  \"address\" : \"tehran\",\n  \"latitude\": \"37.219512\",\n  \"longitude\": \"48.374369\",\n  \"email\" : \"youremail2@gmail.com\",\n  \"verify\" : 1,\n  \"role\" : \"administrator\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/v1/administrator/user/12",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"administrator",
+										"user",
+										"12"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 10:50:38 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 10:50:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer-when-downgrade"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, GET, OPTIONS, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Accept, Authorization, X-Requested-With, Cache-Control"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": 1,\n    \"data\": null,\n    \"message\": \"کاربر با موفقیت ویرایش شد.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Customer",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 10,\n    \"title\": \"فروشگاه حاج علی و دوستان\",\n    \"slug\": \"haj ali & doostan\",\n    \"description\": \"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.\",\n    \"latitude\": \"37.219512\",\n    \"longitude\": \"48.374369\",\n    \"address\": \"تهران, خیابان شهید بهشتی\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/administrator/customer",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"administrator",
+								"customer"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Customer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"user_id\" : 10,\n\t\"title\" : \"فروشگاه حاج علی و دوستان\",\n\t\"slug\" : \"haj ali & doostan\",\n\t\"description\" : \"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.\",\n\t\"latitude\" : \"37.331741000000001\",\n    \"longitude\" : \"-122.0303329\",\n\t\"address\" : \"تهران, خیابان شهید بهشتی\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/v1/administrator/customer",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"administrator",
+										"customer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 18 Mar 2020 10:29:44 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 18 Mar 2020 10:29:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer-when-downgrade"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, GET, OPTIONS, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Accept, Authorization, X-Requested-With, Cache-Control"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": 1,\n    \"data\": null,\n    \"message\": \"فروشگاه با موفقیت ایجاد شد.\"\n}"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d47db0fa-2aea-400a-a79c-9e2ddc64446f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b170cbd6-de45-485f-ba91-67e534436947",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Seller",
+			"item": [
+				{
+					"name": "Get All Products",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/seller/product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"seller",
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/v1/seller/product",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"seller",
+										"product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 10:46:54 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 10:46:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer-when-downgrade"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, GET, OPTIONS, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Accept, Authorization, X-Requested-With, Cache-Control"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 11,\n            \"title\": \"محصول شماره یک\",\n            \"slug\": \"mahsoul-shomare-yek\",\n            \"description\": \"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.\",\n            \"price\": \"25000\",\n            \"time\": \"2020-03-19T14:09:45.000000Z\",\n            \"status\": \"در حال بررسی\"\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/v1/seller/product?page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/v1/seller/product?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"path\": \"http://127.0.0.1:8000/api/v1/seller/product\",\n        \"per_page\": 5,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Product",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"shop_id\": 1,\n    \"title\": \"محصول شماره یک\",\n    \"slug\": \"mahsoul shomare yek\",\n    \"description\": \"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.\",\n    \"price\" : 25000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/seller/product ",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"seller",
+								"product "
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"shop_id\": 1,\n    \"title\": \"محصول شماره یک\",\n    \"slug\": \"mahsoul shomare yek\",\n    \"description\": \"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.\",\n    \"price\" : 25000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/v1/seller/product ",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"seller",
+										"product "
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 10:47:36 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 10:47:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer-when-downgrade"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, GET, OPTIONS, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Accept, Authorization, X-Requested-With, Cache-Control"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": 1,\n    \"data\": null,\n    \"message\": \"محصول با موفقیت ایجاد شد.\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
