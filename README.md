@@ -3,7 +3,7 @@ MarketPlace :)
 </p>
 
 ## Read Document (Api - Postman)
-https://identity.getpostman.com/handover/multifactor?user=4087912&handover_token=e0d79eed-38e2-4998-b2f6-def5cdda6625
+https://documenter.getpostman.com/view/4087912/SzS7Q6KS?version=latest
 
 ## About Laravel
 
